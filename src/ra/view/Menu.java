@@ -26,6 +26,9 @@ public class Menu {
                 case 2:
                     studentService.showListStudent();
                     break;
+                case 3:
+                    studentService.updateStudent();
+                    break;
             }
         } while (true);
     }
