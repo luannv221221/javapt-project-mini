@@ -2,8 +2,9 @@ package ra.model;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Scanner;
 
-public class Student implements Serializable {
+public class Student implements Serializable,IStudent {
     @Serial
     private static final long serialVersionUID = 1L;
     private int studentCode;
@@ -61,5 +62,23 @@ public class Student implements Serializable {
                 ", age=" + age +
                 ", sex=" + sex +
                 '}';
+    }
+
+    @Override
+    public void inputData() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap vao ma sinh vien");
+        studentCode = Integer.parseInt(scanner.nextLine());
+        System.out.println("Nhap vafo ten sinh vien");
+        name = scanner.nextLine();
+        System.out.println("Nhap vao tuoi sinh vien");
+        age = Integer.parseInt(scanner.nextLine());
+        System.out.println("Nhap vao gioi tinh");
+        sex = Boolean.parseBoolean(scanner.nextLine());
+    }
+
+    @Override
+    public void displayData() {
+        System.out.println(toString());
     }
 }

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    private static StudentService  studentService = new StudentService();
+    private static final StudentService  studentService = new StudentService();
 
 
     public static void showMenu(){
@@ -21,9 +21,10 @@ public class Menu {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
-//                    studentService.saveToFile(danh sach sinh vien);
+                    studentService.addStudent();
                     break;
                 case 2:
+                    studentService.showListStudent();
                     break;
             }
         } while (true);
